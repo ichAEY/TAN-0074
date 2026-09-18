@@ -95,7 +95,7 @@ export default {
         id: "cuts",
         label: "Стрижки",
         services: [
-          service("Женская стрижка"),
+          service("Женская стрижка", "3 000 ₽"),
         ],
       },
       {
@@ -103,11 +103,11 @@ export default {
         label: "Окрашивание",
         services: [
           service("Сложное окрашивание"),
-          service("Окрашивание Airtouch", "10 225 ₽"),
+          service("Окрашивание Airtouch"),
           service("Бразильское окрашивание"),
-          service("Окрашивание волос тон в тон", "3 000 ₽"),
-          service("Total Blond", "5 500 ₽"),
-          service("Омбре / Шатуш / Балаяж", "7 000 ₽"),
+          service("Окрашивание волос тон в тон"),
+          service("Total Blond"),
+          service("Омбре / Шатуш / Балаяж"),
         ],
       },
       {
