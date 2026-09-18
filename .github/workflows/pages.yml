@@ -1,4 +1,4 @@
-name: TANEM Client Site
+name: Quality and Pages
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: tanem-pages
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
           repository: ichAEY/Shablon-Hair-Master
           ref: d9ce7e2cd6fa16ad900fce2568b584cbc5a84481
           path: .tanem-source-hair
-      - name: Prepare Hair decoration
+      - name: Prepare approved template assets
         shell: bash
         run: |
           set -euo pipefail
@@ -45,7 +45,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
-      - run: npm run build
+      - run: npm test
+      - name: Render production scenarios
+        run: npm run qa:scenarios
       - id: pages-check
         name: Check whether Pages is enabled
         env:
@@ -58,12 +60,12 @@ jobs:
           fi
       - if: steps.pages-check.outputs.enabled == 'true'
         uses: actions/configure-pages@v5
+      - if: steps.pages-check.outputs.enabled != 'true'
+        run: echo "::notice::Quality checks passed. Enable Settings → Pages → GitHub Actions to publish the preview."
       - if: steps.pages-check.outputs.enabled == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: out
-      - if: steps.pages-check.outputs.enabled != 'true'
-        run: echo "::notice::Build passed. Enable Settings → Pages → GitHub Actions to publish."
 
   deploy:
     if: github.event_name != 'pull_request' && needs.build.outputs.pages-ready == 'true'
