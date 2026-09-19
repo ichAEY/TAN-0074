@@ -395,14 +395,17 @@ export default function MasterTemplate() {
     const updateStatus = () => {
       const parts = new Intl.DateTimeFormat("ru-RU", {
         timeZone: site.location.timeZone,
+        weekday: "short",
         hour: "2-digit",
         minute: "2-digit",
         hourCycle: "h23",
       }).formatToParts(new Date());
       const hours = Number(parts.find((part) => part.type === "hour")?.value ?? 0);
       const minutes = Number(parts.find((part) => part.type === "minute")?.value ?? 0);
+      const weekday = String(parts.find((part) => part.type === "weekday")?.value ?? "").toLowerCase().replace(".", "");
       const minuteOfDay = hours * 60 + minutes;
-      setOpenStatus({ isOpen: minuteOfDay >= openMinutes && minuteOfDay < closeMinutes });
+      const workingDay = ["пн", "вт", "чт", "пт"].includes(weekday);
+      setOpenStatus({ isOpen: workingDay && minuteOfDay >= openMinutes && minuteOfDay < closeMinutes });
     };
 
     const frame = window.requestAnimationFrame(updateStatus);

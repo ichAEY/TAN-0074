@@ -43,8 +43,8 @@ export default {
     "schedule": "Пн, Вт, Чт, Пт 10:00–18:00; Ср, Сб, Вс — выходной",
     "scheduleCapitalized": "Пн, Вт, Чт, Пт 10:00–18:00; Ср, Сб, Вс — выходной",
     "timeZone": "Europe/Moscow",
-    "openTime": "",
-    "closeTime": ""
+    "openTime": "10:00",
+    "closeTime": "18:00"
   },
   "contacts": {
     "phoneDisplay": "+7 (915) 255-05-18",
