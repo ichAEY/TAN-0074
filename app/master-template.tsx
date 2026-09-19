@@ -395,17 +395,14 @@ export default function MasterTemplate() {
     const updateStatus = () => {
       const parts = new Intl.DateTimeFormat("ru-RU", {
         timeZone: site.location.timeZone,
-        weekday: "short",
         hour: "2-digit",
         minute: "2-digit",
         hourCycle: "h23",
       }).formatToParts(new Date());
       const hours = Number(parts.find((part) => part.type === "hour")?.value ?? 0);
       const minutes = Number(parts.find((part) => part.type === "minute")?.value ?? 0);
-      const weekday = String(parts.find((part) => part.type === "weekday")?.value ?? "").toLowerCase().replace(".", "");
       const minuteOfDay = hours * 60 + minutes;
-      const workingDay = ["пн", "вт", "чт", "пт"].includes(weekday);
-      setOpenStatus({ isOpen: workingDay && minuteOfDay >= openMinutes && minuteOfDay < closeMinutes });
+      setOpenStatus({ isOpen: minuteOfDay >= openMinutes && minuteOfDay < closeMinutes });
     };
 
     const frame = window.requestAnimationFrame(updateStatus);
@@ -1660,17 +1657,16 @@ export default function MasterTemplate() {
 
           {site.location.address ? (
             <div className="mct-visit-details mct-visit-details-mobile-julia">
+              <p className="mct-visit-address">{translatedText(site.location.address)}{site.location.schedule ? <span>{translatedText(site.location.schedule)}</span> : null}</p>
               {(routeUrl || mapUrl) ? (
-                <a className="mct-visit-address mct-visit-address-link" href={routeUrl || mapUrl} target="_blank" rel="noopener noreferrer" aria-label={`Построить маршрут к ${site.master.dative}`}>
-                  {translatedText(site.location.address)}
-                  {site.location.schedule ? <span>{translatedText(site.location.schedule)}</span> : null}
-                </a>
-              ) : (
-                <p className="mct-visit-address">
-                  {translatedText(site.location.address)}
-                  {site.location.schedule ? <span>{translatedText(site.location.schedule)}</span> : null}
-                </p>
-              )}
+                <div className="mct-map-wrap">
+                  {mobileMapEmbedUrl && mobileMapEmbedUrl !== "about:blank" ? <iframe className="mct-map-mobile" src={mobileMapEmbedUrl} title={`${site.master.name} на Яндекс Картах`} loading="lazy" allowFullScreen /> : null}
+                  <a className="mct-mobile-route-card" href={routeUrl || mapUrl} target="_blank" rel="noopener noreferrer" aria-label={`Построить маршрут к ${site.master.dative} в Яндекс Картах`}>
+                    <span className="mct-mobile-route-icon" aria-hidden="true">⌖</span>
+                    <span className="mct-mobile-route-copy"><strong>{translatedText(site.location.address)}</strong><small>{translatedText("Построить маршрут")} →</small></span>
+                  </a>
+                </div>
+              ) : null}
             </div>
           ) : null}
 
