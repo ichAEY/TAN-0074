@@ -1,17 +1,8 @@
 # TAN-0074 — Ксения Шаповалова
 
-Клиентский сайт TANEM, собранный из `Shablon-For-Only-Masters@90708b9597ca4410fc07a2f24694e272a34c074e`.
+Fresh client build from TANEM Master Engine v2.
 
-Состояние:
-- Hair preset;
-- RU + EN;
-- без логотипа;
-- без клиентских фотографий;
-- стаж не указан;
-- 3 категории услуг;
-- запись через подтвержденный телефон;
-- Instagram не используется.
-
-Клиентские данные находятся в `site-data.mjs`.
-Проверенные источники — в `SOURCES.md`.
-Общий код Master Engine скопирован в этот репозиторий и не зависит от будущих изменений общего шаблона.
+Engine commit: `9c96c23115b54eb624b6b5b6771f72885005b15e`
+Source: https://yandex.ru/maps/org/kolorist_shapovalova_kseniya/176753126548/
+Booking: https://t.me/Ksusha_colorist
+Photos stay empty until the operator uploads them.
