@@ -1,6 +1,6 @@
 # TAN-0074 — sources
 
-Engine: ichAEY/Shablon-For-Only-Masters @ a7817f44353bcaf29a86a33692c8c09c00d45078
+Engine: ichAEY/Shablon-For-Only-Masters @ 4dbb0d292214a0a87771bae666ceb610b485ffe3
 
 Yandex card:
 https://yandex.ru/maps/org/kolorist_shapovalova_kseniya/176753126548/
