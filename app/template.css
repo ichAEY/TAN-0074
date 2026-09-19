@@ -12514,7 +12514,10 @@ html body .mct-map-wrap > a::after {
 
   .mct-visit-booking-mobile-julia .mct-visit-booking-top .mct-open-status {
     display: inline-flex !important;
+    min-height: 36px !important;
+    padding-inline: 15px !important;
     margin-top: 0 !important;
+    font-size: 12px !important;
   }
 
   .mct-visit-booking-mobile-julia h3 {
