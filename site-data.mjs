@@ -28,17 +28,9 @@ export default {
     "experienceYears": null,
     "experienceAria": "",
     "aboutTitle": "Ксения Шаповалова",
-    "aboutLead": "Колорист и мастер по волосам в Москве.",
-    "aboutParagraphs": [
-      "В подтверждённой категории для длинных волос доступны окрашивание в один тон, окрашивание корней и сложное окрашивание.",
-      "В окрашивание в один тон и окрашивание корней входят уход и укладка; сложное окрашивание включает осветление в различных техниках."
-    ],
-    "skills": [
-      "Окрашивание волос",
-      "Сложные техники окрашивания",
-      "Уход и укладка",
-      "Пн, Вт, Чт, Пт 10:00–18:00; Ср, Сб, Вс — выходной"
-    ]
+    "aboutLead": "",
+    "aboutParagraphs": [],
+    "skills": []
   },
   "location": {
     "country": "Россия",
@@ -135,16 +127,16 @@ export default {
         "Колорист": "Colorist",
         "Стрижки, окрашивание, блонд, уход и укладки с вниманием к состоянию волос, оттенку и вашему образу.": "Haircuts, coloring, blonding, care and styling with attention to hair condition, tone and your look.",
         "Ксения Шаповалова": "Ksenia Shapovalova",
-        "Колорист и мастер по волосам в Москве.": "Colorist and hair stylist in Moscow.",
-        "В подтверждённой категории для длинных волос доступны окрашивание в один тон, окрашивание корней и сложное окрашивание.": "The confirmed long-hair category includes single-tone coloring, root coloring and complex coloring.",
-        "В окрашивание в один тон и окрашивание корней входят уход и укладка; сложное окрашивание включает осветление в различных техниках.": "Single-tone and root coloring include care and styling; complex coloring includes lightening in multiple techniques.",
-        "Окрашивание волос": "Hair coloring",
-        "Сложные техники окрашивания": "Complex coloring techniques",
-        "Уход и укладка": "Care and styling",
-        "Пн, Вт, Чт, Пт 10:00–18:00; Ср, Сб, Вс — выходной": "Mon, Tue, Thu, Fri 10:00–18:00; Wed, Sat, Sun — closed",
+        "Я Ксения — эксперт по волосам.": "I am Ksenia — a hair expert.",
+        "Специализируюсь на стрижках и окрашивании, blond и сложных техниках, уходе и реконструкции волос.": "I specialize in haircuts and coloring, blond and complex techniques, hair care and reconstruction.",
+        "Работаю с формой, цветом и состоянием волос, чтобы результат выглядел цельно и подходил именно вам.": "I work with shape, color and hair condition so the result looks cohesive and suits you.",
+        "Стрижки и окрашивание": "Haircuts and coloring",
+        "Blond и сложные техники": "Blond and complex techniques",
+        "Уход и реконструкция волос": "Hair care and reconstruction",
         "Россия": "Russia",
         "Москва": "Moscow",
         "Боровское шоссе, 18, корп. 2, 119633": "18 Bldg. 2 Borovskoye Highway, Moscow, 119633",
+        "Пн, Вт, Чт, Пт 10:00–18:00; Ср, Сб, Вс — выходной": "Mon, Tue, Thu, Fri 10:00–18:00; Wed, Sat, Sun — closed",
         "Длинные (до лопатки)": "Long hair (to shoulder blades)",
         "Окрашивание волос в один тон": "Single-tone hair coloring",
         "В процедуру входит окрашивание в один тон, уход и укладка.": "Includes single-tone coloring, care and styling.",

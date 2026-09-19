@@ -1,8 +1,5 @@
-# TAN-0074 — Ксения Шаповалова
+# TAN-0074
 
-Fresh client build from TANEM Master Engine v2.
+Production site rebuilt from `ichAEY/Shablon-For-Only-Masters` at `a7817f44353bcaf29a86a33692c8c09c00d45078`.
 
-Engine commit: `9c96c23115b54eb624b6b5b6771f72885005b15e`
-Source: https://yandex.ru/maps/org/kolorist_shapovalova_kseniya/176753126548/
-Booking: https://t.me/Ksusha_colorist
-Photos stay empty until the operator uploads them.
+Client-specific facts live only in `site-data.mjs` and `SOURCES.md`.
