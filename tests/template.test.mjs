@@ -33,13 +33,16 @@ test("the clean template uses one canonical stylesheet and runtime", () => {
   assert.ok(fs.existsSync("public/template-runtime.js"));
 });
 
-test("portfolio and full gallery remain structural without client photos", () => {
+test("portfolio and full gallery remain structural with or without client photos", () => {
   assert.match(html, /id="mobile-portfolio"/);
   assert.match(html, /Смотреть все работы/);
-  assert.match(html, /mct-work-placeholder/);
+  if (site.images.gallery.length === 0) {
+    assert.match(html, /mct-work-placeholder/);
+  } else {
+    assert.ok(html.includes(site.images.gallery[0].src));
+  }
   assert.doesNotMatch(html, /disabled=""[^>]*Смотреть все работы/);
 });
-
 test("specialty hero copy is deterministic", () => {
   const hair = {
     template: { specialty: "hair" },
