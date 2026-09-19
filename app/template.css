@@ -12513,6 +12513,7 @@ html body .mct-map-wrap > a::after {
   }
 
   .mct-visit-booking-mobile-julia .mct-visit-booking-top .mct-open-status {
+    display: inline-flex !important;
     margin-top: 0 !important;
   }
 
