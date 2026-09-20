@@ -137,7 +137,7 @@ test("reviews are capped at nine and preserve author, source and verbatim text",
   assert.match(component, /type Review = \{ author: string; text: string; source\?: string \}/);
   assert.match(component, /review\.source \|\| site\.template\.reviewSource/);
   assert.match(component, /aria-label="5 из 5">★★★★★/);
-  assert.match(component, /<blockquote>«\{review\.text\}»<\/blockquote>/);
+  assert.match(component, /<blockquote>\{review\.text\}<\/blockquote>/);
   assert.match(component, /\{reviews\.length > 0 && \(\s*<section className="mct-reviews/);
 });
 
@@ -147,6 +147,17 @@ test("reviews keep separate approved mobile and desktop renderers", () => {
   assert.match(css, /\.dct-review-card\s*\{\s*display:\s*none !important;/);
   assert.match(css, /@media \(min-width: 1024px\)[\s\S]*?\.mct-review-card-mobile\s*\{\s*display:\s*none !important;/);
   assert.match(css, /@media \(min-width: 1024px\)[\s\S]*?\.dct-review-card\s*\{\s*display:\s*flex !important;/);
+});
+
+test("mobile review final candidate stays clear of the details link", () => {
+  assert.match(component, /mct-review-card mct-review-card-mobile[\s\S]*?mct-mobile-review-stars[\s\S]*?mct-mobile-review-source/);
+  assert.match(component, /<blockquote>\{review\.text\}<\/blockquote>/);
+  assert.match(css, /TANEM mobile review final candidate/);
+  assert.match(css, /mct-review-card-mobile[\s\S]*?-webkit-line-clamp:\s*7 !important/);
+  assert.match(css, /mct-review-card-mobile[\s\S]*?padding:\s*16px 16px 40px !important/);
+  assert.match(css, /mct-review-card-mobile[\s\S]*?max-height:\s*144px !important/);
+  assert.match(css, /mct-review-card-mobile[\s\S]*?position:\s*absolute !important[\s\S]*?bottom:\s*15px !important/);
+  assert.match(css, /mct-mobile-review-source[\s\S]*?translateY\(4px\)/);
 });
 
 test("additional block always uses the three compact approved cards", () => {
