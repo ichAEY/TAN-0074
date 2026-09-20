@@ -11456,7 +11456,7 @@ html body .mct-map-wrap > a::after {
 }
 
 .dct-review-card {
-  display: none !important;
+  display: flex !important;
 }
 
 @media (min-width: 1024px) {
